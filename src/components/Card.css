@@ -1,0 +1,33 @@
+/* Size of pokemon image */
+.pokeImg {
+    max-width: 150px;
+}
+
+/* Pokemon cards grid parent */
+.grid-parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+}
+
+/* Pokemon card grid child */
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid gold;
+    border-radius: 10%;
+    background-color: lightyellow;
+}
+
+/* Pokemon name and pokeId in the pokemon grid card */
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    border-bottom: 1px dashed darkorange;
+}
+
+/* Centers pokemon img within the card */
+.card img {
+    align-self: center;
+}
