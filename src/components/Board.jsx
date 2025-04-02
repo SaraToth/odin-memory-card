@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Header from "./Header";
 import Card from "./Card";
+import Footer from "./Footer";
 
 export default function Board() {
 
@@ -60,6 +61,7 @@ export default function Board() {
                     <Card pokemonObject={pokemon} />
                 )}
             </div>
+            <Footer />
         </> 
     )
 }
