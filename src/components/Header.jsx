@@ -9,7 +9,10 @@ import Scoreboard from "./Scoreboard"
 export default function Header({bestScore, setBestScore}) {
     return (
         <header>
-            <h1>Pokemon! (This is a header)</h1>
+            <div>
+                <h1>Pokemon Memory Game</h1>
+                <p>Get points by clicking on an image but don't click on any more than once!</p>
+            </div>
             <div><Scoreboard bestScore={bestScore} setBestScore={setBestScore}/></div>
         </header>
     )
