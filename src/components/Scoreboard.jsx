@@ -1,6 +1,9 @@
 export default function Scoreboard({bestScore, setBestScore}) {
 
     return(
-        <p>Best Score: {bestScore}</p>
+        <div className="scoreboard">
+            <p>Current Score: 0</p>
+            <p>Best Score: {bestScore}</p>
+        </div>
     )
 }
