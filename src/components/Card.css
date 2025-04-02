@@ -1,9 +1,3 @@
-
-/* Size of pokemon image */
-.pokeImg {
-    max-width: 130px;
-}
-
 /* Pokemon card grid child */
 .card {
     display: flex;
@@ -27,7 +21,8 @@
     align-self: center;
 }
 
-/* Centers pokemon img within the card */
-.card img {
+/* Pokemon image */
+.pokeImg {
+    max-width: 130px;
     align-self: center;
 }
