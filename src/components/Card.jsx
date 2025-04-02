@@ -11,7 +11,7 @@ export default function Card({pokemonObject}) {
                 <h2>{pokemonObject.name}</h2>
                 <p>{pokemonObject.pokeId}</p>
             </div>
-            <img src={pokemonObject.imgUrl} />
+            <img className="pokeImg" src={pokemonObject.imgUrl} />
         </div>
     )
 }
