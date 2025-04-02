@@ -1,0 +1,7 @@
+/* Pokemon cards grid parent */
+.grid-parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    flex: 1;
+}

@@ -3,6 +3,7 @@
  * Board component acts as a parent and manages all other components
  */
 
+import "./Board.css"
 import { useState } from "react";
 import { useEffect } from "react";
 import Header from "./Header";
