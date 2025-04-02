@@ -3,10 +3,13 @@
  * @returns {HTMLElement} Header div containing all Header content
  */
 
-export default function Header() {
+import Scoreboard from "./Scoreboard"
+
+export default function Header({bestScore}) {
     return (
         <header>
             <h1>Pokemon! (This is a header)</h1>
+            <Scoreboard bestScore={bestScore} />
         </header>
     )
 }

@@ -10,7 +10,8 @@ import Card from "./Card";
 
 export default function Board() {
 
-    const [pokemonData, setPokemonData] = useState([]);
+    const [pokemonData, setPokemonData] = useState([]); // Pokemon filterd API data
+    const [bestScore, setBestScore] = useState(0); // Tracks the best score
 
     /**
      * API fetch call that updates pokemonData state with filtered API data
@@ -53,7 +54,7 @@ export default function Board() {
 
     return (
         <div>
-            <Header />
+            <Header bestScore={bestScore}/>
             <div className="grid-parent">
                 {pokemonData && pokemonData.map((pokemon)=> 
                     <div key={pokemon.pokeId}><Card pokemonObject={pokemon} /></div>
