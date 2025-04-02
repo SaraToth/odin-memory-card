@@ -53,13 +53,13 @@ export default function Board() {
     console.log(pokemonData); // Test to confirm that useEffect sets state correctly.
 
     return (
-        <div>
+        <>
             <Header bestScore={bestScore} setBestScore={setBestScore}/>
             <div className="grid-parent">
                 {pokemonData && pokemonData.map((pokemon)=> 
-                    <div key={pokemon.pokeId}><Card pokemonObject={pokemon} /></div>
+                    <Card pokemonObject={pokemon} />
                 )}
             </div>
-        </div> 
+        </> 
     )
 }
