@@ -5,6 +5,7 @@
 
 import { useState } from "react";
 import { useEffect } from "react";
+import Header from "./Header";
 import Card from "./Card";
 
 export default function Board() {
@@ -52,7 +53,7 @@ export default function Board() {
 
     return (
         <div>
-            <h1>Pokemon!</h1>
+            <Header />
             <div className="grid-parent">
                 {pokemonData && pokemonData.map((pokemon)=> 
                     <div key={pokemon.pokeId}><Card pokemonObject={pokemon} /></div>
