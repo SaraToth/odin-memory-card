@@ -4,10 +4,12 @@
  * @returns {HTMLElement} Div - pokemon UI card with pokemon name, id and image 
  */
 
+import './Card.css'
+
 export default function Card({pokemonObject}) {
     return (
         <div className="card">
-            <div>
+            <div className='card-title'>
                 <h2>{pokemonObject.name}</h2>
                 <p>{pokemonObject.pokeId}</p>
             </div>
