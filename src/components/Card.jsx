@@ -7,10 +7,19 @@
 import './Card.css'
 
 export default function Card({pokemonObject}) {
+    const name = pokemonObject.name;
+    let capitalName = name.charAt(0).toUpperCase() + name.slice(1); // Capitalize first letter of names
+
+    // Removes excess info tacked onto pokemon name from the API data
+    if (name.includes("-")) {
+        const index = name.indexOf("-");
+        capitalName = name.charAt(0).toUpperCase() + name.substring(1, index);
+    }
+
     return (
         <div className="card">
             <div className='card-title'>
-                <h2>{pokemonObject.name}</h2>
+                <h2>{capitalName}</h2>
                 <p>{pokemonObject.pokeId}</p>
             </div>
             <img className="pokeImg" src={pokemonObject.imgUrl} />
