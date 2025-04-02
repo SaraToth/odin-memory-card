@@ -1,7 +1,7 @@
 
 /* Size of pokemon image */
 .pokeImg {
-    max-width: 140px;
+    max-width: 130px;
 }
 
 /* Pokemon cards grid parent */
@@ -27,6 +27,12 @@
     justify-content: space-between;
     margin: 0 20px;
     border-bottom: 1px dashed darkorange;
+    padding: 5px 0;
+}
+
+/* PokeId */
+.card-title p {
+    align-self: center;
 }
 
 /* Centers pokemon img within the card */

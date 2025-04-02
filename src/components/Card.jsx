@@ -20,7 +20,7 @@ export default function Card({pokemonObject}) {
         <div className="card">
             <div className='card-title'>
                 <h2>{capitalName}</h2>
-                <p>{pokemonObject.pokeId}</p>
+                <p>#{pokemonObject.pokeId}</p>
             </div>
             <img className="pokeImg" src={pokemonObject.imgUrl} />
         </div>
