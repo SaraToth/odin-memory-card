@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import Header from "./Header";
 import Card from "./Card";
 import Footer from "./Footer";
+import { POKEMON_NAMES } from "../utils/constants";
 
 export default function Board() {
 
@@ -19,12 +20,6 @@ export default function Board() {
      * API fetch call that updates pokemonData state with filtered API data
      */
     useEffect(() => {
-        // 12 Pokemon chosen for gameplay
-        const pokemonNames = ["pikachu", "squirtle", "bulbasaur", 
-            "charmander", "vulpix", "jigglypuff", 
-            "staryu", "onix", "piplup", 
-            "togepi", "eevee", "shaymin-land"]; 
-        
         /**
          * Helper async function to fetch relevant pokemon data from API
          * @param {String} pokemonName 
@@ -45,7 +40,7 @@ export default function Board() {
          * Fetches all filtered pokemon data from API and updates component state with results.
          */
         async function fetchAllPokemon() {
-            const results = await Promise.all(pokemonNames.map(pokemon => fetchPokemonData(pokemon)));
+            const results = await Promise.all(POKEMON_NAMES.map(pokemon => fetchPokemonData(pokemon)));
             setPokemonData(results);
             }
         
