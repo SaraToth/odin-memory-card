@@ -16,6 +16,7 @@ export default function Board() {
     const [pokemonData, setPokemonData] = useState([]); // Pokemon filterd API data
     const [bestScore, setBestScore] = useState(0); // Tracks the best score
     const [clickedPokemon, setClickedPokemon] = useState([]); // Tracks what cards were clicked
+    const [currentScore, setCurrentScore] = useState(0);
 
     /**
      * API fetch call that updates pokemonData state with filtered API data
@@ -50,18 +51,34 @@ export default function Board() {
     
     console.log(pokemonData); // Test to confirm that useEffect sets state correctly.
 
+    /**
+     * Handles updating game score and tracking all clicked cards throughout the game
+     * @param {event} e the clicked element within the pokemon card
+     * @returns {number} the current game score
+     */
     const handleClick = (e) => {
-        const pokemonCard = e.target.closest(".card"); // parent div
-        const pokeName = pokemonCard.id // pokemon name as it appears in our global constant
-       if (!clickedPokemon.includes(pokeName)) {
-        setClickedPokemon((prevClicks)=> [...prevClicks, pokeName]);
-        console.log(clickedPokemon)
-       }
+        const pokemonCard = e.target.closest(".card"); // Access the entire pokemon card
+        const pokeName = pokemonCard.id // Pokemon name as it is written in constants module
+        
+        let updatedScore = currentScore; // Copy the current score
+
+        // Updates clickedPokemon and currentScore when cards are clicked for the first time
+        if (!clickedPokemon.includes(pokeName)) {
+            setClickedPokemon((prevClicks)=> [...prevClicks, pokeName]);
+            updatedScore++;
+            setCurrentScore(updatedScore);
+            return updatedScore; // Ensures score updates before rerendering
+        }
     }
+
+    console.log("current score: " + currentScore);
+
+    // function to handle game over?
+    // function to track current score
 
     return (
         <>
-            <Header bestScore={bestScore} setBestScore={setBestScore}/>
+            <Header bestScore={bestScore} setBestScore={setBestScore} currentScore={currentScore}/>
             <div className="grid-parent">
                 {pokemonData && pokemonData.map((pokemon)=> 
                     <Card key={pokemon.pokeId} pokemonObject={pokemon} onClick={handleClick} />
