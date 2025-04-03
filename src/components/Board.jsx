@@ -59,22 +59,24 @@ export default function Board() {
     const handleClick = (e) => {
         const pokemonCard = e.target.closest(".card"); // Access the entire pokemon card
         const pokeName = pokemonCard.id // Pokemon name as it is written in constants module
-        
-        let updatedScore = currentScore; // Copy the current score
+        handleCurrentScore(pokeName);
+    }
 
+    /**
+     * Tracks what pokemon cards were clicked, and updates current score
+     * @param {string} pokeName Pokemon name as defined in constants.js module
+     */
+    const handleCurrentScore = (pokeName) => {
         // Updates clickedPokemon and currentScore when cards are clicked for the first time
         if (!clickedPokemon.includes(pokeName)) {
             setClickedPokemon((prevClicks)=> [...prevClicks, pokeName]);
-            updatedScore++;
-            setCurrentScore(updatedScore);
-            return updatedScore; // Ensures score updates before rerendering
+            setCurrentScore(currentScore + 1);
         }
     }
 
     console.log("current score: " + currentScore);
 
     // function to handle game over?
-    // function to track current score
 
     return (
         <>
