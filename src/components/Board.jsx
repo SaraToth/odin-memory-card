@@ -72,6 +72,15 @@ export default function Board() {
             setClickedPokemon((prevClicks)=> [...prevClicks, pokeName]);
             setCurrentScore(currentScore + 1);
         }
+
+        if (clickedPokemon.includes(pokeName)) {
+            resetGame();
+        }
+    }
+
+    const resetGame = () => {
+        setClickedPokemon([]);
+        setCurrentScore(0);
     }
 
     console.log("current score: " + currentScore);
