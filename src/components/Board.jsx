@@ -54,12 +54,16 @@ export default function Board() {
     
     console.log(pokemonData); // Test to confirm that useEffect sets state correctly.
 
+    const handleClick = (e) => {
+        console.log(e.target.closest(".card")); // Returns the parent div
+    }
+
     return (
         <>
             <Header bestScore={bestScore} setBestScore={setBestScore}/>
             <div className="grid-parent">
                 {pokemonData && pokemonData.map((pokemon)=> 
-                    <Card pokemonObject={pokemon} />
+                    <Card key={pokemon.pokeId} pokemonObject={pokemon} onClick={handleClick} />
                 )}
             </div>
             <Footer />
