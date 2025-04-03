@@ -15,6 +15,7 @@ export default function Board() {
 
     const [pokemonData, setPokemonData] = useState([]); // Pokemon filterd API data
     const [bestScore, setBestScore] = useState(0); // Tracks the best score
+    const [clickedPokemon, setClickedPokemon] = useState([]); // Tracks what cards were clicked
 
     /**
      * API fetch call that updates pokemonData state with filtered API data
@@ -50,7 +51,12 @@ export default function Board() {
     console.log(pokemonData); // Test to confirm that useEffect sets state correctly.
 
     const handleClick = (e) => {
-        console.log(e.target.closest(".card")); // Returns the parent div
+        const pokemonCard = e.target.closest(".card"); // parent div
+        const pokeName = pokemonCard.id // pokemon name as it appears in our global constant
+       if (!clickedPokemon.includes(pokeName)) {
+        setClickedPokemon((prevClicks)=> [...prevClicks, pokeName]);
+        console.log(clickedPokemon)
+       }
     }
 
     return (
