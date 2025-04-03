@@ -6,7 +6,7 @@
 
 import './Card.css'
 
-export default function Card({pokemonObject}) {
+export default function Card({pokemonObject, onClick}) {
     const name = pokemonObject.name;
     let capitalName = name.charAt(0).toUpperCase() + name.slice(1); // Capitalize first letter of names
 
@@ -17,7 +17,7 @@ export default function Card({pokemonObject}) {
     }
 
     return (
-        <div className="card">
+        <div className="card" id={pokemonObject.name} onClick={onClick}>
             <div className='card-title'>
                 <h2>{capitalName}</h2>
                 <p>#{pokemonObject.pokeId}</p>
