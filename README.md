@@ -80,3 +80,12 @@ sprites.other["official-artwork"].front_default,
 ```
 
 If you would like to switch the selected art type you can reference the [Pokemon API Sprites Documentation](https://github.com/PokeAPI/sprites#sprites) to see the other image options
+
+## Notes on Responsive Design
+
+While this project incorporates some resonsive design, the nature of this game is challenging to adjust to different screen sizes.
+
+This game can primarily be utilized as a desktop game currently.
+
+In order to be entirely responsive for all screensizes more media breakpoints need to be implemented.
+
