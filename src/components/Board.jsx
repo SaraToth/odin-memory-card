@@ -81,13 +81,13 @@ export default function Board() {
         // If card was not clicked before, score increases and cards shuffle
         if (!clickedPokemon.includes(pokeName)) {
             setClickedPokemon((prevClicks)=> [...prevClicks, pokeName]);
-            setCurrentScore(currentScore + 1);
+            setCurrentScore((prevScore) => prevScore + 1);
         }
 
         // If card was previously clicked game ends
         if (clickedPokemon.includes(pokeName)) {
             handleBestScore();
-            resetGame();
+            setIsModalon(true);
         }
     }
 
@@ -95,7 +95,6 @@ export default function Board() {
      * Resets game and displays game over modal
      */
     const resetGame = () => {
-        setIsModalon(true);
         setClickedPokemon([]);
         setCurrentScore(0);
     }
@@ -126,6 +125,7 @@ export default function Board() {
      */
     const closeModal = () => {
         if(isModalOn) {
+            resetGame();
             setIsModalon(false);
         }
     }
