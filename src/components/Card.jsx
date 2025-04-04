@@ -4,7 +4,7 @@
  * @returns {HTMLElement} Div - pokemon UI card with pokemon name, id and image 
  */
 
-import './Card.css'
+import "../styles/Card.css"
 
 export default function Card({pokemonObject, onClick}) {
     const name = pokemonObject.name;

@@ -3,7 +3,7 @@
  * @module Footer
  * @returns {HTMLElement} Footer
  */
-import "./Footer.css"
+import "../styles/Footer.css"
 
 export default function Footer() {
     return(

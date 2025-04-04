@@ -1,4 +1,4 @@
-import "./Modal.css"
+import "../styles/Modal.css"
 
 export default function Modal({currentScore, bestScore, onClick}) {
     return (

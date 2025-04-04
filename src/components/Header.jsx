@@ -3,7 +3,7 @@
  * @returns {HTMLElement} Header div containing all Header content
  */
 
-import "./Header.css"
+import "../styles/Header.css"
 
 export default function Header({bestScore, currentScore}) {
     return (
