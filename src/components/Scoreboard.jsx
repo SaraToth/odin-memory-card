@@ -1,4 +1,4 @@
-export default function Scoreboard({bestScore, setBestScore, currentScore}) {
+export default function Scoreboard({bestScore, currentScore}) {
 
     return(
         <div className="scoreboard">
