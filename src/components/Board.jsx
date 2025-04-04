@@ -1,8 +1,3 @@
-/** 
- * @module board 
- * Board component acts as a parent and manages all other components
- */
-
 import "../styles/Board.css"
 import { useState } from "react";
 import { useEffect } from "react";
@@ -12,6 +7,11 @@ import Modal from "./Modal";
 import Footer from "./Footer";
 import { POKEMON_NAMES } from "../utils/constants";
 
+/**
+ * Board Component - handles all gameboard rendering
+ * 
+ * @returns {JSX.Element} The rendered board component
+ */
 export default function Board() {
 
     const [pokemonData, setPokemonData] = useState([]); // Pokemon filterd API data

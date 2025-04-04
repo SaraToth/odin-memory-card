@@ -3,10 +3,7 @@ import "../styles/Card.css"
 /**
  * Pokemon Card Component
  * 
- * @typedef {Object} PokemonObject
- * @property {string} name The name of the pokemon
- * @property {number} pokeId The pokedex id of the pokemon
- * @property {string} imgUrl The URL of the pokemon's image
+ * @typedef {import('../utils/types').PokemonObject} PokemonObject
  * 
  * @typedef {Object} CardProps
  * @property {PokemonObject} pokemonObject Object containing pokemon data
@@ -15,7 +12,6 @@ import "../styles/Card.css"
  * @param {CardProps} props
  * @returns {JSX.Element} The rendered pokemon card
  */
-
 export default function Card({pokemonObject, onClick}) {
     const name = pokemonObject.name;
     let capitalName = name.charAt(0).toUpperCase() + name.slice(1); // Capitalize first letter of names
