@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Header from "./Header";
 import Card from "./Card";
+import Modal from "./Modal";
 import Footer from "./Footer";
 import { POKEMON_NAMES } from "../utils/constants";
 
@@ -17,6 +18,7 @@ export default function Board() {
     const [bestScore, setBestScore] = useState(0); // Tracks the best score
     const [clickedPokemon, setClickedPokemon] = useState([]); // Tracks what cards were clicked
     const [currentScore, setCurrentScore] = useState(0);
+    const [isModalOn, setIsModalon] = useState(false);
 
     /**
      * API fetch call that updates pokemonData state with filtered API data
@@ -70,6 +72,7 @@ export default function Board() {
     }
 
     const resetGame = () => {
+        setIsModalon(true);
         setClickedPokemon([]);
         setCurrentScore(0);
     }
@@ -89,6 +92,12 @@ export default function Board() {
         setPokemonData(arr);
     }
 
+    const closeModal = () => {
+        if(isModalOn) {
+            setIsModalon(false);
+        }
+    }
+
     return (
         <>
             <Header bestScore={bestScore} currentScore={currentScore}/>
@@ -97,6 +106,7 @@ export default function Board() {
                     <Card key={pokemon.pokeId} pokemonObject={pokemon} onClick={handleClick} />
                 )}
             </div>
+            {isModalOn && <Modal currentScore={currentScore} bestScore={bestScore} onClick={closeModal} />}
             <Footer />
         </> 
     )
