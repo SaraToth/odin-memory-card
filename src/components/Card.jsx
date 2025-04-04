@@ -28,7 +28,9 @@ export default function Card({pokemonObject, onClick}) {
                 <h2>{capitalName}</h2>
                 <p>#{pokemonObject.pokeId}</p>
             </div>
-            <img className="pokeImg" src={pokemonObject.imgUrl} />
+            <div className="pokeImg-div">
+                <img className="pokeImg" src={pokemonObject.imgUrl} />
+            </div>
         </div>
     )
 }

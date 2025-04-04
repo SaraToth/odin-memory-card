@@ -17,6 +17,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0 20px;
+    margin-bottom: 5px;
     border-bottom: 1px dashed darkorange;
     padding: 5px 0;
 }
@@ -26,8 +27,34 @@
     align-self: center;
 }
 
+
+.pokeImg-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Pokemon image */
 .pokeImg {
-    max-width: 130px;
-    align-self: center;
+    width: 130px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .pokeImg {
+        width: clamp(100px, 20vw, 200px);
+    }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+    .pokeImg {
+        width: clamp(75px, 20vw, 100px);
+    }
+    .card-title {
+        font-size: clamp(8px, 2vw, 12px);
+    }
+
+    .card-title p {
+        display: none;
+    }
 }

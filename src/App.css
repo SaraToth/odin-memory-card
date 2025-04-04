@@ -12,3 +12,15 @@
   padding: 0 75px;
   background-color: rgb(251, 232, 120);
 }
+
+@media (max-width: 1024px) {
+  #root {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 0 20px;
+  }
+}
