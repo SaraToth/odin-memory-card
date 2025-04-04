@@ -1,6 +1,6 @@
 import "../styles/Header.css"
 
-/** Component that renders header and scoreboard
+/** Header Component
  * @typedef {object} HeaderProps
  * @property {number} bestScore The player's best score so far
  * @property {number} currentScore The current score in the ongoing game
@@ -8,7 +8,6 @@ import "../styles/Header.css"
  * @param {HeaderProps} props
  * @returns {JSX.Element} The rendered Header Component
  */
-
 export default function Header({bestScore, currentScore}) {
     return (
         <header>

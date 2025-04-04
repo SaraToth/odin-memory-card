@@ -1,10 +1,9 @@
-/**
- * Component that returns all Footer content
- * @module Footer
- * @returns {HTMLElement} Footer
- */
 import "../styles/Footer.css"
 
+/**
+ * Footer Component
+ * @returns {JSX.Element} The rendered Footer Component
+ */
 export default function Footer() {
     return(
         <footer>
