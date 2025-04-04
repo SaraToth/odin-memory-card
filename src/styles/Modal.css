@@ -16,13 +16,12 @@
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: #fefefe;
     margin-bottom: 50px;
     padding: 20px;
     border: 3px solid gold;
     border-radius: 20px;
     background-color: lightyellow;
-    min-width: 500px; /* Could be more or less, depending on screen size */
+    min-width: 500px;
     min-height: 200px;
 }
   
@@ -43,14 +42,18 @@
     cursor: pointer;
   }
 
+/* h2 element in the modal */
 .modal-content h2 {
     font-size: 30px;
 }
+
+/* Modal text */
 .modal-content p {
     font-size: 20px;
     padding-bottom: 8px;
 }
 
+/* Div containing h2 and X button in the modal */
 .modal-title {
     display: flex;
     justify-content: space-between;
