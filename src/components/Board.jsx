@@ -48,24 +48,13 @@ export default function Board() {
         
         fetchAllPokemon();
     }, []);
-    
-    console.log(pokemonData); // Test to confirm that useEffect sets state correctly.
 
-    /**
-     * Handles updating game score and tracking all clicked cards throughout the game
-     * @param {event} e the clicked element within the pokemon card
-     * @returns {number} the current game score
-     */
     const handleClick = (e) => {
         const pokemonCard = e.target.closest(".card"); // Access the entire pokemon card
         const pokeName = pokemonCard.id // Pokemon name as it is written in constants module
         handleCurrentScore(pokeName);
     }
 
-    /**
-     * Tracks what pokemon cards were clicked, and updates current score
-     * @param {string} pokeName Pokemon name as defined in constants.js module
-     */
     const handleCurrentScore = (pokeName) => {
         // Updates clickedPokemon and currentScore when cards are clicked for the first time
         if (!clickedPokemon.includes(pokeName)) {
@@ -74,6 +63,7 @@ export default function Board() {
         }
 
         if (clickedPokemon.includes(pokeName)) {
+            handleBestScore()
             resetGame();
         }
     }
@@ -83,9 +73,11 @@ export default function Board() {
         setCurrentScore(0);
     }
 
-    console.log("current score: " + currentScore);
-
-    // function to handle game over?
+    const handleBestScore = () => {
+        if (currentScore > bestScore) {
+            setBestScore(currentScore);
+        }
+    }
 
     return (
         <>
