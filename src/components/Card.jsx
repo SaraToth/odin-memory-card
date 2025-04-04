@@ -1,10 +1,20 @@
-/**
- * Creates a pokemon card that renders on board component page
- * @module card
- * @returns {HTMLElement} Div - pokemon UI card with pokemon name, id and image 
- */
-
 import "../styles/Card.css"
+
+/**
+ * Pokemon Card Component
+ * 
+ * @typedef {Object} PokemonObject
+ * @property {string} name The name of the pokemon
+ * @property {number} pokeId The pokedex id of the pokemon
+ * @property {string} imgUrl The URL of the pokemon's image
+ * 
+ * @typedef {Object} CardProps
+ * @property {PokemonObject} pokemonObject Object containing pokemon data
+ * @property {() => void} onClick Handler function for card div clicks
+ * 
+ * @param {CardProps} props
+ * @returns {JSX.Element} The rendered pokemon card
+ */
 
 export default function Card({pokemonObject, onClick}) {
     const name = pokemonObject.name;
