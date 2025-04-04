@@ -81,7 +81,7 @@ export default function Board() {
 
     return (
         <>
-            <Header bestScore={bestScore} setBestScore={setBestScore} currentScore={currentScore}/>
+            <Header bestScore={bestScore} currentScore={currentScore}/>
             <div className="grid-parent">
                 {pokemonData && pokemonData.map((pokemon)=> 
                     <Card key={pokemon.pokeId} pokemonObject={pokemon} onClick={handleClick} />
