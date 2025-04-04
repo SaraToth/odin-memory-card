@@ -4,7 +4,6 @@
  */
 
 import "./Header.css"
-import Scoreboard from "./Scoreboard"
 
 export default function Header({bestScore, currentScore}) {
     return (
@@ -13,7 +12,10 @@ export default function Header({bestScore, currentScore}) {
                 <h1>Pokemon Memory Game</h1>
                 <p>Get points by clicking on an image but don't click on any more than once!</p>
             </div>
-            <div><Scoreboard bestScore={bestScore} currentScore = {currentScore}/></div>
+            <div className="scoreboard">
+                <p>Current Score: {currentScore}</p>
+                <p>Best Score: {bestScore}</p>
+            </div>
         </header>
     )
 }
