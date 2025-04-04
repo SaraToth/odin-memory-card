@@ -53,6 +53,7 @@ export default function Board() {
         const pokemonCard = e.target.closest(".card"); // Access the entire pokemon card
         const pokeName = pokemonCard.id // Pokemon name as it is written in constants module
         handleCurrentScore(pokeName);
+        randomizeCards();
     }
 
     const handleCurrentScore = (pokeName) => {
@@ -63,7 +64,7 @@ export default function Board() {
         }
 
         if (clickedPokemon.includes(pokeName)) {
-            handleBestScore()
+            handleBestScore();
             resetGame();
         }
     }
@@ -77,6 +78,15 @@ export default function Board() {
         if (currentScore > bestScore) {
             setBestScore(currentScore);
         }
+    }
+
+    const randomizeCards = () => {
+        const arr = pokemonData
+        for (let i= arr.length -1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        setPokemonData(arr);
     }
 
     return (
