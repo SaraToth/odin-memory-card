@@ -3,8 +3,13 @@
     display: flex;
     flex-direction: column;
     border: 3px solid gold;
-    border-radius: 10%;
+    border-radius: 20px;
     background-color: lightyellow;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px 5px rgb(255, 215, 0, 0.8);
 }
 
 /* Pokemon name and pokeId in the pokemon grid card */
