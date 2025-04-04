@@ -1,9 +1,13 @@
-/** Contains all Header content
- * @module Header
- * @returns {HTMLElement} Header div containing all Header content
- */
-
 import "../styles/Header.css"
+
+/** Component that renders header and scoreboard
+ * @typedef {object} HeaderProps
+ * @property {number} bestScore The player's best score so far
+ * @property {number} currentScore The current score in the ongoing game
+ * 
+ * @param {HeaderProps} props
+ * @returns {JSX.Element} The rendered Header Component
+ */
 
 export default function Header({bestScore, currentScore}) {
     return (
