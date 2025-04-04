@@ -1,7 +1,7 @@
 import "../styles/Header.css"
 
 /** Header Component
- * @typedef {object} HeaderProps
+ * @typedef {Object} HeaderProps
  * @property {number} bestScore The player's best score so far
  * @property {number} currentScore The current score in the ongoing game
  * 
