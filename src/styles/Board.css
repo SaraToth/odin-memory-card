@@ -6,12 +6,14 @@
     flex: 1;
 }
 
+/* Tablet */
 @media (max-width: 1024px) {
     .grid-parent {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
     .grid-parent {
         grid-template-columns: repeat(3, 1fr);

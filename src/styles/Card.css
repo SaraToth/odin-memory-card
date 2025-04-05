@@ -46,7 +46,7 @@
     }
 }
 
-/* Phone */
+/* Mobile */
 @media (max-width: 600px) {
     .pokeImg {
         width: clamp(75px, 20vw, 100px);
