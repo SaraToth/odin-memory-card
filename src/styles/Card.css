@@ -27,7 +27,7 @@
     align-self: center;
 }
 
-
+/* Centers Pokemon img in the card */
 .pokeImg-div {
     display: flex;
     justify-content: center;
@@ -37,6 +37,7 @@
 .pokeImg {
     width: 130px;
 }
+
 
 /* Tablet */
 @media (max-width: 1024px) {

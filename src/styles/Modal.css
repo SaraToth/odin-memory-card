@@ -60,3 +60,10 @@
     padding-bottom: 20px;
 }
 
+/* Mobile */
+@media (max-width: 600px) {
+  .modal-content {
+    min-width: 250px;
+    min-height: 200px;
+  }
+}
