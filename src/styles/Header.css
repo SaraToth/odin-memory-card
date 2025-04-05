@@ -14,7 +14,11 @@ h1 {
     min-width: 110px;
 }
 
+/* Mobile */
 @media (max-width: 600px) {
+    header {
+        padding-bottom: 15px;
+    }
     h1 {
         font-size: 25px;
         padding-bottom: 5px;
